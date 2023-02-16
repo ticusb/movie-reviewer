@@ -15,7 +15,7 @@ public class MoviesApplication {
 
 	@GetMapping("/")
 	public String apiEntry() {
-		return "Hello World";
+		return new MovieService().allMovies().get(0).getTitle();
 	}
 
 }
