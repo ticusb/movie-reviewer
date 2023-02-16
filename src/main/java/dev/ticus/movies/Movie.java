@@ -20,7 +20,7 @@ public class Movie {
     @Id
     private ObjectId id;
 
-    private String imdbID,
+    private String imdbId,
             title,
             releaseDate,
             trailerLink,
