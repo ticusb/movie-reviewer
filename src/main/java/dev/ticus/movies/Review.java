@@ -20,7 +20,7 @@ public class Review {
     private String body;
 
     public Review(String reviewBody) {
-        this.reviewBody = reviewBody;
+        this.body = reviewBody;
     }
     
 }
