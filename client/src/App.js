@@ -2,11 +2,16 @@ import './App.css';
 import api from './api/axiosconfig'
 import { useState, useEffect } from 'react';
 
+import Layout from './components/Layout';
+import Home from './components/home/Home'
+import { Routes, Route } from 'react-router-dom';
+
+
 function App() {
 
   const[movies, setMovies] = useState();
 
-  const getMovies = async (req, res) => {
+  const getMovies = async () => {
       try {
         const response = await api.get("/v1/movies");
 
@@ -24,7 +29,13 @@ function App() {
 
   return (
     <div className="App">
-      
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route path='/' element={<Home />}>
+
+          </Route>
+        </Route>
+      </Routes>
     </div>
   );
 }
