@@ -1,11 +1,12 @@
 
 import React from 'react';
+import Hero from '../hero/Hero.js';
 
-const Home = () => {
+const Home = (props) => {
     return(
-        <main>
-            Welcom Home
-        </main>
+        <div>
+            <Hero movies={props.movies}/>
+        </div>
     )
 }
 
