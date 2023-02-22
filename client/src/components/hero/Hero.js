@@ -2,13 +2,21 @@ import './Hero.css';
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
+import { Button } from 'react-bootstrap';
 
 
 const Hero = (props) => {
+
+    const navigate = useNavigate();
+
+    function reviews(movieId) {
+        navigate(`/Reviews/${movieId}`);
+    }
+
     let movies = []
     try {
         movies = props.movies.map((movie) => {
@@ -29,6 +37,9 @@ const Hero = (props) => {
                                                     <FontAwesomeIcon className='play-button-icon' icon={faCirclePlay}/>
                                                 </div>
                                                 </Link>
+                                                <div className='movie-review-container'>
+                                                    <Button variant="info" onClick={() => reviews(movie.imdbId)} >View Reviews</Button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
