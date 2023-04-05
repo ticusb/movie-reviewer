@@ -43,7 +43,7 @@ function App() {
 
   useEffect(() => {
     getMovies();
-  })
+  }, [])
 
   return (
     <div className="App">
